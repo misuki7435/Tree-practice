@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o
-LINKOBJ  = main.o
+OBJ      = "Binary\ search\ tree(BST).o" main.o "in-order\ iterator\ implementation.o" "Tree\ operations.o" "Tree\ traversals.o" "Tree\ construction.o"
+LINKOBJ  = "Binary search tree(BST).o" main.o "in-order iterator implementation.o" "Tree operations.o" "Tree traversals.o" "Tree construction.o"
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -24,5 +24,20 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
+"Binary\ search\ tree(BST).o": Binary\ search\ tree(BST).cpp
+	$(CPP) -c "Binary search tree(BST).cpp" -o "Binary search tree(BST).o" $(CXXFLAGS)
+
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+"in-order\ iterator\ implementation.o": in-order\ iterator\ implementation.cpp
+	$(CPP) -c "in-order iterator implementation.cpp" -o "in-order iterator implementation.o" $(CXXFLAGS)
+
+"Tree\ operations.o": Tree\ operations.cpp
+	$(CPP) -c "Tree operations.cpp" -o "Tree operations.o" $(CXXFLAGS)
+
+"Tree\ traversals.o": Tree\ traversals.cpp
+	$(CPP) -c "Tree traversals.cpp" -o "Tree traversals.o" $(CXXFLAGS)
+
+"Tree\ construction.o": Tree\ construction.cpp
+	$(CPP) -c "Tree construction.cpp" -o "Tree construction.o" $(CXXFLAGS)
